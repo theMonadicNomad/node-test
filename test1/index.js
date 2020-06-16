@@ -24,26 +24,27 @@ const validate = (result) => {
     }
 };
 
+const capitalizeFirstLetter = (name) =>
+{
+    return name.charAt(0).toUpperCase() + name.slice(1);
+
+}
+
+
 const splitName = (fullname) =>
 {
-
-    let x = fullname.split(" ");
+    let x = fullname.toLowerCase().split(" ").map(capitalizeFirstLetter);
     var news = { first: x[0],
-        middle: x.length >2 ? fullname.split(" ", x.length-1).slice(1)   :[],
-  
-        last: x.length >1 ? x[x.length-1]: null,
-  
+        middle: x.length >2 ? fullname.toLowerCase().split(" ", x.length-1).map(capitalizeFirstLetter).slice(1)   :[],
+        last: x.length >1 ? x[x.length-1]: null,  
     }
     return news;
 
 }
 
-// const newRese = names.map(splitName);
-// console.log(newRese);
-
 
 // implement code generating result
-const result = names.map(splitName);;
+const result = names.map(splitName);
 
 // At the end call validate
 validate(result);
