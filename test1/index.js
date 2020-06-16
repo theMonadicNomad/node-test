@@ -24,8 +24,26 @@ const validate = (result) => {
     }
 };
 
+const splitName = (fullname) =>
+{
+
+    let x = fullname.split(" ");
+    var news = { first: x[0],
+        middle: x.length >2 ? fullname.split(" ", x.length-1).slice(1)   :[],
+  
+        last: x.length >1 ? x[x.length-1]: null,
+  
+    }
+    return news;
+
+}
+
+// const newRese = names.map(splitName);
+// console.log(newRese);
+
+
 // implement code generating result
-const result = [];
+const result = names.map(splitName);;
 
 // At the end call validate
 validate(result);
