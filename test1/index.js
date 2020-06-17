@@ -30,7 +30,6 @@ const capitalizeFirstLetter = (name) =>
 
 }
 
-
 const splitName = (fullname) =>
 {
     let x = fullname.toLowerCase().split(" ").map(capitalizeFirstLetter);
