@@ -46,25 +46,18 @@ const validate = (result) => {
 
 const getFriends =  (ids) => {
 
-    console.log('ids : ', ids);
-    console.log('friends :' + friends);
     var list = [];
     for (var id of ids)
     {
         var index = friends.findIndex(obj => obj.id === id);
-        console.log("index : " + index + " id : " + id);
-      //  console.log(friends[index]);
         list.push(friends[index])
 
-
-  }
+    }
 
   return list;
 
 
 };
-
-
 
 const processFriend = (friend) => {
 
@@ -76,56 +69,28 @@ const processFriend = (friend) => {
 
     }
 
-
     return newFriend;
 
 
 };
 
 
-
-
-
-
 const process = (objects) => {
 
-// for (var key in objects)
-// {
-
-// console.log("> " + key + " = " + objects[key]);
-
-// friends.push(objects[key]);
-
-
-// }
-
-// objects.forEach(obj => {
-//     Object.entries(obj).forEach(([key, value]) => {
-//         console.log(`${key} ${value}`);
-//         friends.push(value);
-//     });
-// }); 
-
-
-
 Object.keys(objects).forEach(function(key) {
-    console.table('Key : ' + key + ', Value : ' + objects[key]);
+    // console.table('Key : ' + key + ', Value : ' + objects[key]);
     friends.push(objects[key])
   })
 
 var newFriends = friends.map(processFriend);
 
-//console.log(newArray);
 return newFriends;
 
 }
 
-//console.log(database[621]);
-
-
 // implement a method to create this result
 const result = process(database);
 console.log(result);
-//console.log(friends.findIndex(obj => obj.id === 621));
+
 // At the end call validate
 validate(result);

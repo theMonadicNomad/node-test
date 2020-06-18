@@ -14,10 +14,8 @@ const positions = [
 
 const checkRange = (a) => {
 
-    if(a <1 || a >8) {return false;  }
+    if(a <1 || a >8) {  return false;  }
     else { return true };
-
-
 } 
 
 // implement this method to test if two knights threaten eachother
@@ -29,9 +27,9 @@ const canAttack = (a, b) => {
     if(checkRange(a[2]) && checkRange(a[1]) && checkRange(b[2]) && checkRange(b[1]))
     {
 
-    var n = Math.abs(a[1] - b[1])  + Math.abs(a[2] - b [2])
-    console.log(" n : " + n + " a : " + a[0] + " b : " + b);
-    return n===3;
+        var n = Math.abs(a[1] - b[1])  + Math.abs(a[2] - b [2])
+        // console.log(" n : " + n + " a : " + a[0] + " b : " + b);
+        return n===3;
 
     }
 

@@ -33,11 +33,11 @@ const capitalizeFirstLetter = (name) =>
 const splitName = (fullname) =>
 {
     let x = fullname.toLowerCase().split(" ").map(capitalizeFirstLetter);
-    var news = { first: x[0],
+    var newNames = { first: x[0],
         middle: x.length >2 ? fullname.toLowerCase().split(" ", x.length-1).map(capitalizeFirstLetter).slice(1)   :[],
         last: x.length >1 ? x[x.length-1]: null,  
     }
-    return news;
+    return newNames;
 
 }
 
